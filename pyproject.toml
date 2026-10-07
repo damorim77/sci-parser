@@ -1,0 +1,28 @@
+[project]
+name = "sci-parser"
+version = "0.1.0"
+description = "Parse scientific PDFs to markdown/docx/html/epub/txt with equations preserved as high-DPI images"
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "marker-pdf==2.0.0",
+    "pymupdf>=1.28",
+]
+
+[project.scripts]
+sci-parser = "sci_parser.cli:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/sci_parser"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
