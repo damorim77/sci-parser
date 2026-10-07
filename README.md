@@ -146,5 +146,4 @@ src/sci_parser/formats.py     # pandoc por formato + pré-processamento txt (img
 Layout, OCR, figuras e tabelas de
 [marker 2.0](https://github.com/datalab-to/marker) (Datalab); recortes via
 [PyMuPDF](https://pymupdf.readthedocs.io/); conversão final via
-[pandoc](https://pandoc.org/). Decisões de design documentadas em `PLAN.md` e
-`AGENTS.md`.
+[pandoc](https://pandoc.org/).
