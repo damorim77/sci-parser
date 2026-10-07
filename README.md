@@ -134,6 +134,9 @@ src/sci_parser/formats.py     # pandoc por formato + pré-processamento txt (img
   outro diretório.
 - **`--format txt` sem equações**: verifique se usou `--keep-latex-equations`
   sem querer — o txt depende do alt text das eq-images.
+- **`docker binary not found` (Windows + NVIDIA)**: o surya detecta a GPU e
+  escolhe o backend `vllm`, que exige Docker — force o `llama-server` com
+  `SURYA_INFERENCE_BACKEND=llamacpp`.
 
 ## Limitações conhecidas
 
