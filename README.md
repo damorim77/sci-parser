@@ -14,7 +14,7 @@
 [Uso](#uso) • [Desenvolvimento](#desenvolvimento) •
 [Solução de problemas](#solução-de-problemas) • [Créditos](#créditos)
 
-![PDF original (attention.pdf) e EPUB gerado (attention.epub) lado a lado](docs/assets/pdf-vs-epub.png)
+![PDF original (attention.pdf) e EPUB gerado (attention.epub) lado a lado, folheando 6 paginas](docs/assets/demo.gif)
 
 ## Overview
 
