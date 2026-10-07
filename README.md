@@ -48,20 +48,6 @@ pandoc                          → docx | html | epub | txt
 - **Testes rápidos sem modelos**: unit tests usam fakes duck-typed; só a
   integração baixa os modelos.
 
-## Arquitetura
-
-```mermaid
-flowchart TD
-    P["PDF<br/>sci-parser paper.pdf --format docx"]
-    P --> E["MarkerRunner<br/>PdfConverter.build_document · passada única"]
-    E --> Q["find_equations<br/>walk recursivo · blocos Equation com html"]
-    Q --> C["crop_equations<br/>PyMuPDF Rect + margem 3pt · 300 DPI"]
-    C --> M["mutate_blocks<br/>block.html = img src + alt LaTeX"]
-    M --> R["MarkdownRenderer<br/>re-render · ![alt](src) na posição exata"]
-    R --> F["pandoc<br/>docx · html --embed-resources · epub + title · txt plain"]
-    F --> J["report.json<br/>páginas · equações · figuras · tabelas"]
-```
-
 ## Instalação
 
 Pré-requisitos:
