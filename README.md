@@ -14,6 +14,8 @@
 [Uso](#uso) • [Desenvolvimento](#desenvolvimento) •
 [Solução de problemas](#solução-de-problemas) • [Créditos](#créditos)
 
+![PDF original (attention.pdf) e EPUB gerado (attention.epub) lado a lado](docs/assets/pdf-vs-epub.png)
+
 ## Overview
 
 O `sci-parser` executa **uma única passada de inferência** do

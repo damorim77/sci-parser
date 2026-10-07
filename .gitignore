@@ -5,3 +5,4 @@ dist/
 build/
 *_parsed/
 .DS_Store
+.playwright-mcp/
