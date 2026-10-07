@@ -49,7 +49,7 @@ def test_pipeline_eq_images(tmp_path):
     rc = execute(_args(), out)
 
     assert rc == 0
-    md = (out / "attention.md").read_text()
+    md = (out / "attention.md").read_text(encoding="utf-8")
 
     # 5 equações recortadas e referenciadas
     eq_files = list((out / "eq_images").glob("*.png"))
@@ -70,7 +70,7 @@ def test_pipeline_eq_images(tmp_path):
     # report básico
     import json
 
-    report = json.loads((out / "report.json").read_text())
+    report = json.loads((out / "report.json").read_text(encoding="utf-8"))
     assert report["equations"]["found"] == 5
     assert report["pages"] == 15
     assert report["figures"] == 5
@@ -85,7 +85,7 @@ def test_pipeline_keep_latex_equations(tmp_path):
 
     assert rc == 0
     assert not (out / "eq_images").exists()
-    md = (out / "attention.md").read_text()
+    md = (out / "attention.md").read_text(encoding="utf-8")
     assert md.count("eq_images/") == 0
 
 

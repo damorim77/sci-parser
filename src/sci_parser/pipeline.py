@@ -25,7 +25,7 @@ def _save_markdown_assets(out_dir: Path, stem: str, markdown: str, images: dict)
             img = img.convert("RGB")
         img.save(out_dir / img_name)
     md_path = out_dir / f"{stem}.md"
-    md_path.write_text(markdown)
+    md_path.write_text(markdown, encoding="utf-8")
     return md_path
 
 
@@ -103,6 +103,6 @@ def execute(args: Namespace, out_dir: Path) -> int:
                 "dir": str(out_dir),
             },
         }
-        (out_dir / "report.json").write_text(json.dumps(report, indent=2))
+        (out_dir / "report.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
 
     return 0

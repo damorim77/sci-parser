@@ -45,9 +45,9 @@ def convert(md_path: Path, fmt: str, title: str, out_dir: Path) -> Path | None:
         return None
 
     if fmt == "txt":
-        plain_md = _to_plain_text(md_path.read_text())
+        plain_md = _to_plain_text(md_path.read_text(encoding="utf-8"))
         plain_path = out_dir / f"{stem}.plain.md"
-        plain_path.write_text(plain_md)
+        plain_path.write_text(plain_md, encoding="utf-8")
         cmd = ["pandoc", plain_path.name, "-f", "markdown", "-t", "plain",
                "-o", f"{stem}.txt"]
     else:

@@ -31,7 +31,7 @@ def md_dir(tmp_path):
     eq_dir.mkdir()
     Image.new("RGB", (1, 1)).save(eq_dir / "eq_p1_01.png")
     Image.new("RGB", (1, 1)).save(tmp_path / "_page_2_Diagram_0.jpeg")
-    (tmp_path / "paper.md").write_text(MD_FIXTURE)
+    (tmp_path / "paper.md").write_text(MD_FIXTURE, encoding="utf-8")
     return tmp_path
 
 
@@ -43,7 +43,7 @@ class TestConvert:
 
     def test_html_embutido_e_selfcontained(self, md_dir):
         out = convert(md_dir / "paper.md", "html", "Título Teste", md_dir)
-        html = out.read_text()
+        html = out.read_text(encoding="utf-8")
         assert html.count("data:image") == 2  # eq + figura embutidas
         assert "<html" in html and "Título Teste" in html
 
@@ -67,7 +67,7 @@ class TestConvert:
 
     def test_txt_contem_alt_de_equacao_e_sem_refs(self, md_dir):
         out = convert(md_dir / "paper.md", "txt", "T", md_dir)
-        txt = out.read_text()
+        txt = out.read_text(encoding="utf-8")
         assert "eq: x^2 + y^2" in txt
         assert "![" not in txt
         assert "_page_2_Diagram" not in txt
